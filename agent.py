@@ -9,8 +9,8 @@ from helper import plot
 MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
 LR = 0.001
-NEW_TRAINING = True # Do this when the Snake is being stupid
-MODEL_PATH = "model/Kaden_Snake.pth"
+NEW_TRAINING = True # Do this when the Snake is not learning
+MODEL_PATH = "model/model1.pth"
 
 GAMES = 0
 BLOCK_SIZE = 20

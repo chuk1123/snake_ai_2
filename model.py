@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import os
 import numpy as np
 
-SAVE_PATH = 'Kaden_Snake.pth'
+SAVE_PATH = 'model1.pth'
 
 class Linear_QNet(nn.Module):
     '''def __init__(self, input_size, hidden_size, hidden_size2, output_size):
