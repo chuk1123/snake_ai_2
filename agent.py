@@ -10,7 +10,7 @@ MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
 LR = 0.001
 NEW_TRAINING = True # Do this when the Snake is not learning
-MODEL_PATH = "model/model1.pth"
+MODEL_PATH = "model/new_model.pth"
 
 GAMES = 0
 BLOCK_SIZE = 20

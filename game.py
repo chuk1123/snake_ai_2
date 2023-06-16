@@ -25,11 +25,11 @@ BLACK = (0,0,0)
 GREEN = (0, 255, 100)
 
 BLOCK_SIZE = 20
-SPEED = 60
+SPEED = 1000
 
 class SnakeGameAI:
 
-    def __init__(self, w=600, h=600):
+    def __init__(self, w=800, h=800):
         self.w = w
         self.h = h
         # init display
@@ -79,13 +79,13 @@ class SnakeGameAI:
         #Collides with itself or wall
         if self.is_collision():
             game_over = True
-            reward = -100
+            reward = -10
             return reward, game_over, self.score
         
         #Gets into endless loop for too long
         if self.frame_iteration > 100*len(self.snake):
             game_over = True
-            reward = -100
+            reward = -10
             return reward, game_over, self.score
 
         # 4. place new food or just move
@@ -95,7 +95,7 @@ class SnakeGameAI:
             self._place_food()
         else:
             self.snake.pop()
-            reward = 0.1
+            reward = 0.005
         
         # 5. update ui and clock
         self._update_ui()
