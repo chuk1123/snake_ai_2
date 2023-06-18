@@ -65,8 +65,9 @@ class QTrainer:
         for idx in range(len(done)):
             Q_new = reward[idx]
             if not done[idx]:
+                # Qnew = Reward (quality of current state) + max quality of next state that can be achieved
                 Q_new = reward[idx] + self.gamma * torch.max(self.model(next_state[idx]))
-
+            # The Q value for the action we took is set to the new Q value
             target[idx][torch.argmax(action[idx]).item()] = Q_new
     
         # 2: Q_new = r + y * max(next_predicted Q value) -> only do this if not done
