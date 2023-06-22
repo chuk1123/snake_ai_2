@@ -8,8 +8,8 @@ from helper import plot
 
 MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
-LR = 0.001
-NEW_TRAINING = False # Do this when the Snake is not learning
+LR = 0.000
+NEW_TRAINING = True # Must specify before training
 MODEL_PATH = "model/new_model.pth"
 
 GAMES = 0
