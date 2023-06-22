@@ -70,10 +70,9 @@ class SnakeGameAI:
                 quit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_DOWN:
-                    location -= 100
+                    SPEED -= 100
                 if event.key == pygame.K_UP:
-                    speed += 100
-    
+                    SPEED += 100
         
         # 2. move
         self._move(action) # update the head
