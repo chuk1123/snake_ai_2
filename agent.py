@@ -203,9 +203,7 @@ def train():
             if save_model == 'y':
                 agent.model.save()
                 print("saved model!")
-                quit()
-            else:
-                quit()
+            quit()
 
         state_new = agent.get_state(game)
         # train short memory
@@ -223,8 +221,8 @@ def train():
 
             if score > record:
                 record = score
-                #agent.model.save()
-                #print("saved model!")
+                # agent.model.save()
+                # print("saved model!")
 
             print('Game', agent.n_games, 'Score', score, 'Record:', record)
 
