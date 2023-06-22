@@ -8,7 +8,7 @@ from helper import plot
 
 MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
-LR = 0.000
+LR = 0.003
 NEW_TRAINING = True # Must specify before training
 MODEL_PATH = "model/new_model.pth"
 

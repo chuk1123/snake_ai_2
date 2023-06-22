@@ -68,6 +68,12 @@ class SnakeGameAI:
                 pygame.quit()
                 return -1 #quit the game and save model
                 quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_DOWN:
+                    location -= 100
+                if event.key == pygame.K_UP:
+                    speed += 100
+    
         
         # 2. move
         self._move(action) # update the head
@@ -79,19 +85,19 @@ class SnakeGameAI:
         #Collides with itself or wall
         if self.is_collision():
             game_over = True
-            reward = -10
+            reward = -5
             return reward, game_over, self.score
         
         #Gets into endless loop for too long
         if self.frame_iteration > 100*len(self.snake):
             game_over = True
-            reward = -10
+            reward = -5
             return reward, game_over, self.score
 
         # 4. place new food or just move
         if self.head == self.food:
             self.score += 1
-            reward = 10
+            reward = 5
             self._place_food()
         else:
             self.snake.pop()
