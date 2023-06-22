@@ -25,7 +25,7 @@ BLACK = (0,0,0)
 GREEN = (0, 255, 100)
 
 BLOCK_SIZE = 20
-SPEED = 1000
+speed = 1000
 
 class SnakeGameAI:
 
@@ -68,11 +68,11 @@ class SnakeGameAI:
                 pygame.quit()
                 return -1 #quit the game and save model
                 quit()
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_DOWN:
-                    SPEED -= 100
-                if event.key == pygame.K_UP:
-                    SPEED += 100
+            # if event.type == pygame.KEYDOWN:
+            #     if event.key == pygame.K_DOWN:
+            #         SPEED -= 100
+            #     if event.key == pygame.K_UP:
+            #         SPEED += 100
         
         # 2. move
         self._move(action) # update the head
@@ -104,7 +104,7 @@ class SnakeGameAI:
         
         # 5. update ui and clock
         self._update_ui()
-        self.clock.tick(SPEED)
+        self.clock.tick(speed)
         # 6. return game over and score
         return reward, game_over, self.score
 
